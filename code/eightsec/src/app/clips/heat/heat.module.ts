@@ -1,16 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
-
+import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { ThisWeekPage } from './this-week.page';
+import { HeatPage } from './heat.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ThisWeekPage
+    component: HeatPage
   }
 ];
 
@@ -21,6 +20,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ThisWeekPage]
+  declarations: [HeatPage]
 })
-export class ThisWeekPageModule {}
+export class HeatPageModule {}

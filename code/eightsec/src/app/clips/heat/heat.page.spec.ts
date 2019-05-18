@@ -1,22 +1,20 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ThisWeekPage } from './this-week.page';
+import { HeatPage } from './heat.page';
 
 describe('ThisWeekPage', () => {
-  let component: ThisWeekPage;
-  let fixture: ComponentFixture<ThisWeekPage>;
+  let component: HeatPage;
+  let fixture: ComponentFixture<HeatPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThisWeekPage ],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    })
-    .compileComponents();
+      declarations: [HeatPage],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ThisWeekPage);
+    fixture = TestBed.createComponent(HeatPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
