@@ -8,7 +8,8 @@ const routes: Routes = [
   {
     path: 'account',
     loadChildren: './account/account.module#AccountPageModule'
-  }
+  },
+  { path: 'help', loadChildren: './help/help.module#HelpPageModule' }
 ];
 
 @NgModule({
