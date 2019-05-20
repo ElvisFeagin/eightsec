@@ -12,11 +12,11 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: './clips/history/history.module#HistoryPageModule'
+            loadChildren: './history/history.module#HistoryPageModule'
           },
           {
             path: ':clipId',
-            loadChildren: './clips/view/view.module#ViewPageModule'
+            loadChildren: './view/view.module#ViewPageModule'
           }
         ]
       },
@@ -25,28 +25,28 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: './clips/heat/heat.module#HeatPageModule'
+            loadChildren: './heat/heat.module#HeatPageModule'
           },
           {
             path: ':clipId',
-            loadChildren: './clips/view/view.module#ViewPageModule'
+            loadChildren: './view/view.module#ViewPageModule'
           }
         ]
-      },
-      {
-        path: 'upload',
-        children: [
-          {
-            path: '',
-            loadChildren: './clips/upload/upload.module#UploadPageModule'
-          }
-        ]
-      },
-      {
-        path: '',
-        redirectTo: '/clips/tabs/history',
-        pathMatch: 'full'
       }
+      // {
+      //   path: 'upload',
+      //   children: [
+      //     {
+      //       path: '',
+      //       loadChildren: './clips/upload/upload.module#UploadPageModule'
+      //     }
+      //   ]
+      // },
+      // {
+      //   path: '',
+      //   redirectTo: '/clips/tabs/history',
+      //   pathMatch: 'full'
+      // }
     ]
   },
   {
