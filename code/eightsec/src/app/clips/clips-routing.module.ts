@@ -32,21 +32,21 @@ const routes: Routes = [
             loadChildren: './view/view.module#ViewPageModule'
           }
         ]
+      },
+      {
+        path: 'account',
+        children: [
+          {
+            path: '',
+            loadChildren: './upload/upload.module#UploadPageModule'
+          }
+        ]
+      },
+      {
+        path: '',
+        redirectTo: '/clips/tabs/history',
+        pathMatch: 'full'
       }
-      // {
-      //   path: 'upload',
-      //   children: [
-      //     {
-      //       path: '',
-      //       loadChildren: './clips/upload/upload.module#UploadPageModule'
-      //     }
-      //   ]
-      // },
-      // {
-      //   path: '',
-      //   redirectTo: '/clips/tabs/history',
-      //   pathMatch: 'full'
-      // }
     ]
   },
   {
