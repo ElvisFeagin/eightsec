@@ -1,34 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClipsPageModule } from './clips.module';
+
+import { ClipsPage } from './clips.page';
 
 const routes: Routes = [
   {
     path: 'tabs',
-    component: ClipsPageModule,
+    component: ClipsPage,
     children: [
-      // {
-      //   path: 'clips',
-      //   children: [{ path: '', loadChildren: './clips.module#ClipsPageModule' }]
-      // },
-      // {
-      //   path: 'help',
-      //   children: [
-      //     { path: '', loadChildren: '../help/help.module#HelpPageModule' }
-      //   ]
-      // },
-      // {
-      //   path: '',
-      //   redirectTo: 'clips/tabs/clips',
-      //   pathMatch: 'full'
-      // }
+      {
+        path: 'list',
+        children: [
+          {
+            path: '',
+            loadChildren: './clips.module#ClipsPageModule'
+          }
+        ]
+      },
+      {
+        path: '',
+        redirectTo: '/clips/tabs/list',
+        pathMatch: 'full'
+      }
     ]
   },
-  // {
-  //   path: '',
-  //   redirectTo: 'clips/tabs/clips',
-  //   pathMatch: 'full'
-  // }
+  {
+    path: '',
+    redirectTo: '/clips/tabs/list',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
