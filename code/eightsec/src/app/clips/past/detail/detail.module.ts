@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+
 import { IonicModule } from '@ionic/angular';
 
-import { ClipsPage } from './clips.page';
-import { SharedModule } from '../shared/shared.module';
-import { Routes, RouterModule } from '@angular/router';
+import { DetailPage } from './detail.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: ClipsPage
+    component: DetailPage
   }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     IonicModule,
-    SharedModule,
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule],
-  declarations: [ClipsPage]
+  declarations: [DetailPage]
 })
-export class ClipsPageModule {}
+export class DetailPageModule {}
