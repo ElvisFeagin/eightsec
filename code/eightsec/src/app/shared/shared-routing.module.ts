@@ -34,4 +34,8 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class SharedRoutingModule {}
+export class SharedRoutingModule {
+  constructor() {
+    console.log('IN: SharedRoutingModule -> constructor');
+  }
+}

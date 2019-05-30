@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { Routes, RouterModule } from '@angular/router';
 
 import { ClipsPage } from './clips.page';
 import { SharedModule } from '../shared/shared.module';
-import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    component: ClipsPage
+    component: ClipsPage,
+    children: [
+      {
+        path: 'heat',
+        loadChildren: './heat/heat.module#HeatPageModule'
+      }
+    ]
   }
 ];
 
@@ -20,7 +26,10 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes)
   ],
-  exports: [RouterModule],
   declarations: [ClipsPage]
 })
-export class ClipsPageModule {}
+export class ClipsPageModule {
+  constructor() {
+    console.log('IN: ClipsPageModule -> constructor');
+  }
+}

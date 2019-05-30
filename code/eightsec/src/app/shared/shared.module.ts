@@ -10,4 +10,8 @@ import { SharedRoutingModule } from './shared-routing.module';
   imports: [CommonModule, IonicModule, SharedRoutingModule],
   exports: [AppTabsComponent]
 })
-export class SharedModule {}
+export class SharedModule {
+  constructor() {
+    console.log('IN: SharedModule -> constructor');
+  }
+}
