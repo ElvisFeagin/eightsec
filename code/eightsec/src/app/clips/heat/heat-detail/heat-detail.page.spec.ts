@@ -1,20 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { EightsecTabsComponent } from './app-tabs.component';
 
-describe('EightsecTabsComponent', () => {
-  let component: EightsecTabsComponent;
-  let fixture: ComponentFixture<EightsecTabsComponent>;
+import { HeatDetailPage } from './heat-detail.page';
+
+describe('HeatDetailPage', () => {
+  let component: HeatDetailPage;
+  let fixture: ComponentFixture<HeatDetailPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [EightsecTabsComponent],
-      schemas: [CUSTOM_ELEMENTS_SCHEMA]
-    }).compileComponents();
+      declarations: [ HeatDetailPage ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EightsecTabsComponent);
+    fixture = TestBed.createComponent(HeatDetailPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

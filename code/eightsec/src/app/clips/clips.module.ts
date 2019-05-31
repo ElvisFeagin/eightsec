@@ -1,35 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { Routes, RouterModule } from '@angular/router';
 
 import { ClipsPage } from './clips.page';
-import { SharedModule } from '../shared/shared.module';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: ClipsPage,
-    children: [
-      {
-        path: 'heat',
-        loadChildren: './heat/heat.module#HeatPageModule'
-      }
-    ]
-  }
-];
+import { ClipsRoutingModule } from './clips-routing.module';
+import { HelpPage } from '../help/help.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    IonicModule,
-    SharedModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [ClipsPage]
+  imports: [CommonModule, IonicModule, ClipsRoutingModule],
+  declarations: [ClipsPage, HelpPage]
 })
-export class ClipsPageModule {
-  constructor() {
-    console.log('IN: ClipsPageModule -> constructor');
-  }
-}
+export class ClipsPageModule {}
