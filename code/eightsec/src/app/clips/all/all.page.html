@@ -10,27 +10,53 @@
       <ion-col size="12" size-sm="8" offset-sm="2">
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Front Runner: <strong>{{loadedClips[0].nickname}}</strong></ion-card-title>
+            <ion-card-title
+              >Front Runner:
+              <strong>{{ loadedClips[0].nickname }}</strong></ion-card-title
+            >
           </ion-card-header>
           <ion-img [src]="loadedClips[0].imageUrl"></ion-img>
           <ion-card-content>
-            <p>Votes: <strong>{{loadedClips[0].votes}}</strong></p>
-            <p>{{loadedClips[0].caption}}</p>
+            <p>
+              Votes: <strong>{{ loadedClips[0].votes }}</strong>
+            </p>
+            <p>{{ loadedClips[0].caption }}</p>
           </ion-card-content>
+          <div text-center>
+            <ion-button
+              fill="clear"
+              color="primary"
+              [routerLink]="['/', 'clips', 'tabs', 'clips-list', 'heat']"
+              >Current Heat</ion-button
+            >
+          </div>
         </ion-card>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="12" size-sm="8" offset-sm="2">
         <ion-list>
-          <ion-item *ngFor="let clip of loadedClips.slice(1)">
+          <ion-item
+            *ngFor="let clip of loadedClips.slice(1)"
+            [routerLink]="[
+              '/',
+              'clips',
+              'tabs',
+              'clips-list',
+              'past',
+              'week-' + clip.weekNumber
+            ]"
+            detail
+          >
             <ion-thumbnail slot="start">
               <ion-img [src]="clip.imageUrl"></ion-img>
             </ion-thumbnail>
             <ion-label>
-              <h2>{{clip.nickname}}</h2>
-              <p>Votes: <strong>{{clip.votes}}</strong></p>
-              <p>{{clip.caption}}</p>
+              <h2>{{ clip.nickname }}</h2>
+              <p>
+                Votes: <strong>{{ clip.votes }}</strong>
+              </p>
+              <p>{{ clip.caption }}</p>
             </ion-label>
           </ion-item>
         </ion-list>
