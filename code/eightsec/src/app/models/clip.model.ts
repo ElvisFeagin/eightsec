@@ -1,8 +1,9 @@
 export class Clip {
   constructor(
     public id: string,
-    public weekNumber: number,
+    public uploadDate: Date,
     public weekDate: Date,
+    public weekNumber: number,
     public nickname: string,
     public votes: number,
     public caption: string,
