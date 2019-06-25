@@ -9,8 +9,9 @@ export class ClipsService {
   private _clips: Clip[] = [
     new Clip(
       'c3',
-      4,
       new Date(2025, 6, 27),
+      new Date(2025, 6, 27),
+      1,
       'MrSkeleton',
       23,
       'But, like most politicians, he promised more than he could deliver. I can',
@@ -18,8 +19,9 @@ export class ClipsService {
     ),
     new Clip(
       'c2',
-      3,
       new Date(2025, 6, 20),
+      new Date(2025, 6, 20),
+      1,
       'Filet Minyon',
       10,
       'Please, Don-Bot... look into your hard drive, and open your mercy file!',
@@ -27,8 +29,9 @@ export class ClipsService {
     ),
     new Clip(
       'c1',
-      2,
       new Date(2025, 6, 13),
+      new Date(2025, 6, 13),
+      1,
       'P. Ennis',
       3,
       'I was having the most wonderful dream. Except you were there',
