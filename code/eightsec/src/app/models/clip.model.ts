@@ -7,6 +7,7 @@ export class Clip {
     public nickname: string,
     public caption: string,
     public imageUrl: string,
+    public isHeat: boolean,
     public votes: number
   ) {}
 }

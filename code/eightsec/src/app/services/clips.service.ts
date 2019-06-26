@@ -15,6 +15,7 @@ export class ClipsService {
       'MrSkeleton',
       'But, like most politicians, he promised more than he could deliver. I can',
       'https://free-images.com/lg/7c29/cat_pet_mirror_697113.jpg',
+      false,
       23
     ),
     new Clip(
@@ -25,6 +26,7 @@ export class ClipsService {
       'Filet Minyon',
       'Please, Don-Bot... look into your hard drive, and open your mercy file!',
       'https://free-images.com/lg/3427/clown_claw_circus_tihany.jpg',
+      false,
       10
     ),
     new Clip(
@@ -35,6 +37,7 @@ export class ClipsService {
       'P. Ennis',
       'I was having the most wonderful dream. Except you were there',
       'https://free-images.com/lg/ea39/boys_funny_faces_expressions.jpg',
+      false,
       3
     )
   ];
