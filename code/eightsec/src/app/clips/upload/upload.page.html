@@ -36,6 +36,15 @@
           </ion-item>
         </ion-col>
       </ion-row>
+      <ion-row
+        *ngIf="!form.get('caption').valid && form.get('caption').touched"
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>
+            Caption cannot be empty, and cannot be longer than 80 characters.
+          </p>
+        </ion-col>
+      </ion-row>
     </ion-grid>
   </form>
 </ion-content>
