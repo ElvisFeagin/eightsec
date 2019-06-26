@@ -25,6 +25,6 @@ export class UploadPage implements OnInit {
   }
 
   onClipUpload() {
-    console.log('Clip upload submitted...');
+    console.log(this.form);
   }
 }
