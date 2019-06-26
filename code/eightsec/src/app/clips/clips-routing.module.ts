@@ -30,11 +30,11 @@ const routes: Routes = [
             loadChildren: './upload/upload.module#UploadPageModule'
           },
           {
-            path: 'past/:weekNum',
+            path: 'past/week/:weekNum',
             loadChildren: './past/past.module#PastPageModule'
           },
           {
-            path: 'past/:weekNum/:clipId',
+            path: 'past/week/:weekNum/clip/:clipId',
             loadChildren:
               './past/past-detail/past-detail.module#PastDetailPageModule'
           }
