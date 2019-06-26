@@ -5,8 +5,8 @@ export class Clip {
     public weekDate: Date,
     public weekNumber: number,
     public nickname: string,
-    public votes: number,
     public caption: string,
-    public imageUrl: string
+    public imageUrl: string,
+    public votes: number
   ) {}
 }
