@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ClipsService } from './clips.service';
+import { ClipsService } from './top-clips.service';
 
 describe('ClipsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

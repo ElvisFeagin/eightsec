@@ -14,7 +14,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: './all/all.module#AllPageModule'
+            loadChildren: './top/top.module#TopPageModule'
           },
           {
             path: 'heat',
