@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { UploadService, UploadedClip } from 'src/app/services/upload.service';
+
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.page.html',
@@ -9,7 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class UploadPage implements OnInit {
   form: FormGroup;
 
-  constructor() {}
+  constructor(private uploadService: UploadService) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -25,6 +27,19 @@ export class UploadPage implements OnInit {
   }
 
   onClipUpload() {
-    console.log(this.form);
+    if (!this.form.valid) {
+      return;
+    }
+    const clip: UploadedClip = {
+      uploadDate: new Date(),
+      weekDate: new Date(),
+      weekNumber: 0,
+      nickname: this.form.value.nickname as string,
+      caption: this.form.value.caption as string,
+      imageUrl: '',
+      isHeat: false,
+      votes: 0
+    };
+    this.uploadService.addClip(clip);
   }
 }

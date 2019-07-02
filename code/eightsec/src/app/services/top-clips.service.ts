@@ -9,12 +9,14 @@ import { map } from 'rxjs/operators';
 
 export interface TopClip {
   id?: string;
-  nickname: string;
   caption: string;
-  imageUrl?: string;
-  isHeat?: boolean;
-  votes?: number;
-  weekNumber?: number;
+  imageUrl: string;
+  isHeat: boolean;
+  nickname: string;
+  uploadDate: Date;
+  votes: number;
+  weekDate: Date;
+  weekNumber: number;
 }
 
 @Injectable({

@@ -56,7 +56,6 @@ const routes: Routes = [
     redirectTo: '/clips/tabs/clips-list',
     pathMatch: 'full'
   },
-  { path: 'all', loadChildren: './all/all.module#AllPageModule' },
   {
     path: 'heat-detail',
     loadChildren: './heat/heat-detail/heat-detail.module#HeatDetailPageModule'
