@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { ClipsPage } from './clips.page';
+import { AuthGuard } from '../auth/auth.guard';
 import { HelpPage } from '../help/help.page';
+import { ClipsPage } from './clips.page';
 
 const routes: Routes = [
   {
@@ -22,11 +22,13 @@ const routes: Routes = [
           },
           {
             path: 'heat/clip/:clipId',
+            canLoad: [AuthGuard],
             loadChildren:
               './heat/heat-detail/heat-detail.module#HeatDetailPageModule'
           },
           {
             path: 'upload',
+            canLoad: [AuthGuard],
             loadChildren: './upload/upload.module#UploadPageModule'
           },
           {
@@ -45,6 +47,11 @@ const routes: Routes = [
         component: HelpPage
       },
       {
+        path: 'auth',
+        redirectTo: '/auth',
+        pathMatch: 'full'
+      },
+      {
         path: '',
         redirectTo: '/clips/tabs/clips-list',
         pathMatch: 'full'
@@ -55,14 +62,6 @@ const routes: Routes = [
     path: '',
     redirectTo: '/clips/tabs/clips-list',
     pathMatch: 'full'
-  },
-  {
-    path: 'heat-detail',
-    loadChildren: './heat/heat-detail/heat-detail.module#HeatDetailPageModule'
-  },
-  {
-    path: 'past-detail',
-    loadChildren: './past/past-detail/past-detail.module#PastDetailPageModule'
   }
 ];
 

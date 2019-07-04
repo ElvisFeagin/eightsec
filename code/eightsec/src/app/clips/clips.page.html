@@ -8,5 +8,11 @@
       <ion-label>Help</ion-label>
       <ion-icon name="help"></ion-icon>
     </ion-tab-button>
+    <ion-tab-button tab="auth">
+      <ion-label *ngIf="!isUserAuthenticated">Login</ion-label>
+      <ion-icon name="log-in" *ngIf="!isUserAuthenticated"></ion-icon>
+      <ion-label *ngIf="isUserAuthenticated">Logout</ion-label>
+      <ion-icon name="log-out" *ngIf="isUserAuthenticated"></ion-icon>
+    </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
