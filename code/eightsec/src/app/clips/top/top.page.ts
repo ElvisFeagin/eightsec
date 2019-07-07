@@ -18,7 +18,7 @@ export class TopPage implements OnInit {
     this.topClips = this.topClipsService.getTopClips().pipe(
       map(data => {
         data.forEach(d => {
-          // Some ugly type assertions in TypeScript to satisfy VSCode syntax checking
+          // Some ugly type casting assertions in TypeScript to satisfy VSCode syntax checking
           d.weekDate = ((d.weekDate as unknown) as firebase.firestore.Timestamp).toDate();
           d.uploadDate = ((d.uploadDate as unknown) as firebase.firestore.Timestamp).toDate();
         });

@@ -10,12 +10,12 @@ export interface UploadedClip {
   uploadDate: Date;
   weekDate: Date;
   weekNumber: number;
-  userId?: string;
   nickname: string;
   caption: string;
   imageUrl: string;
   isHeat: boolean;
   votes: number;
+  userId?: string;
 }
 
 @Injectable({

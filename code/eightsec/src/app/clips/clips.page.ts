@@ -11,6 +11,10 @@ export class ClipsPage implements DoCheck {
 
   constructor(private authService: AuthService) {}
 
+  onButtonClick() {
+    this.authService.onTabButtonClick();
+  }
+
   ngDoCheck() {
     this.isUserAuthenticated = this.authService.userIsAuthenticated;
   }

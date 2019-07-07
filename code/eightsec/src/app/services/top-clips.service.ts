@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface TopClip {
-  id?: string;
+  id: string | null;
   caption: string;
   imageUrl: string;
   isHeat: boolean;
@@ -17,6 +17,7 @@ export interface TopClip {
   votes: number;
   weekDate: Date;
   weekNumber: number;
+  userId: string | null;
 }
 
 @Injectable({

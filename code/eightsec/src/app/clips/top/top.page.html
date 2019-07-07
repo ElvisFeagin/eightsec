@@ -32,20 +32,28 @@
             </ion-thumbnail>
             <ion-label *ngIf="clip.isHeat">
               <h2>Current Heat in Progress</h2>
-              <p>Front Runner: <strong>{{ clip.nickname }}</strong></p>
+              <p>
+                Front Runner: <strong>{{ clip.nickname }}</strong>
+              </p>
               <p>
                 Votes: <strong>{{ clip.votes }}</strong>
               </p>
               <p>{{ clip.caption }}</p>
             </ion-label>
             <ion-label *ngIf="!clip.isHeat">
-                <p>Week: {{clip.weekNumber}} ({{clip.weekDate | date: 'MM/dd/yyyy' }})</p>
-                <p>Winner: <strong>{{ clip.nickname }}</strong></p>
-                <p>
-                  Votes: <strong>{{ clip.votes }}</strong>
-                </p>
-                <p>{{ clip.caption }}</p>
-              </ion-label>
+              <p>
+                Week: {{ clip.weekNumber }} ({{
+                  clip.weekDate | date: 'MM/dd/yyyy'
+                }})
+              </p>
+              <p>
+                Winner: <strong>{{ clip.nickname }}</strong>
+              </p>
+              <p>
+                Votes: <strong>{{ clip.votes }}</strong>
+              </p>
+              <p>{{ clip.caption }}</p>
+            </ion-label>
           </ion-item>
         </ion-list>
       </ion-col>
