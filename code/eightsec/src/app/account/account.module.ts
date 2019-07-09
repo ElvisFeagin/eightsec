@@ -14,5 +14,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [CommonModule, IonicModule, RouterModule.forChild(routes)],
+  declarations: [AccountPage]
 })
 export class AccountPageModule {}
