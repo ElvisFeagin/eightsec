@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '../auth/auth.guard';
 import { HelpPage } from '../help/help.page';
 import { ClipsPage } from './clips.page';
+import { AccountPage } from '../account/account.page';
 
 const routes: Routes = [
   {
@@ -22,13 +22,13 @@ const routes: Routes = [
           },
           {
             path: 'heat/clip/:clipId',
-            canLoad: [AuthGuard],
+            // canLoad: [AuthGuard],
             loadChildren:
               './heat/heat-detail/heat-detail.module#HeatDetailPageModule'
           },
           {
             path: 'upload',
-            canLoad: [AuthGuard],
+            // canLoad: [AuthGuard],
             loadChildren: './upload/upload.module#UploadPageModule'
           },
           {
@@ -47,9 +47,26 @@ const routes: Routes = [
         component: HelpPage
       },
       {
-        path: 'auth',
-        redirectTo: '/auth',
-        pathMatch: 'full'
+        path: 'account',
+        component: AccountPage,
+        children: [
+          {
+            path: '',
+            loadChildren: '../account/account.module#AccountPageModule'
+          },
+          {
+            path: 'signup',
+            loadChildren: '../account/signup/signup.module#SignupPageModule'
+          },
+          {
+            path: 'setup',
+            loadChildren: '../account/setup/setup.module#SetupPageModule'
+          },
+          {
+            path: 'subscribe',
+            loadChildren: '../account/subscribe/subscribe.module#SubscribePageModule'
+          }
+        ]
       },
       {
         path: '',

@@ -1,21 +1,9 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
-
-import { AuthService } from '../services/auth.service';
+import { Component } from '@angular/core';
 
 @Component({
   templateUrl: './clips.page.html',
   styleUrls: ['./clips.page.scss']
 })
-export class ClipsPage implements DoCheck {
-  isUserAuthenticated = false;
-
-  constructor(private authService: AuthService) {}
-
-  onButtonClick() {
-    this.authService.onTabButtonClick();
-  }
-
-  ngDoCheck() {
-    this.isUserAuthenticated = this.authService.userIsAuthenticated;
-  }
+export class ClipsPage {
+  constructor() {}
 }

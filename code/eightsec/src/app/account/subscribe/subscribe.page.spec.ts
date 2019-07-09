@@ -1,22 +1,22 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthPage } from './auth.page';
+import { SubscribePage } from './subscribe.page';
 
-describe('AuthPage', () => {
-  let component: AuthPage;
-  let fixture: ComponentFixture<AuthPage>;
+describe('SubscribePage', () => {
+  let component: SubscribePage;
+  let fixture: ComponentFixture<SubscribePage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthPage ],
+      declarations: [ SubscribePage ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthPage);
+    fixture = TestBed.createComponent(SubscribePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
