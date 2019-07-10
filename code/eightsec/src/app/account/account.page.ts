@@ -6,13 +6,13 @@ import { AccountService } from '../services/account.service';
   templateUrl: './account.page.html',
   styleUrls: ['./account.page.scss']
 })
-export class AccountPage  {
-  // public userIsAuthenticated = false;
+export class AccountPage implements OnInit {
+  public userIsAuthenticated = false;
+  public userIsSubscribed = false;
 
-  // constructor(private accountService: AccountService) {}
+  constructor(private accountService: AccountService) {}
 
-  // ngOnInit() {
-  //   console.log('userIsAuthenticated = ', this.accountService.userIsAuthenticated);
-  //   this.userIsAuthenticated = this.accountService.userIsAuthenticated;
-  // }
+  ngOnInit() {
+    this.userIsAuthenticated = this.accountService.userIsAuthenticated;
+  }
 }

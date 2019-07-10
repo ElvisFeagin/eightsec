@@ -8,7 +8,35 @@ import { AccountPage } from './account.page';
 const routes: Routes = [
   {
     path: '',
-    component: AccountPage
+    component: AccountPage,
+    children: [
+      {
+        path: 'status',
+        component: AccountPage,
+        children: [
+          {
+            path: '',
+            loadChildren: './status/status.module#StatusPageModule'
+          },
+          {
+            path: 'setup',
+            loadChildren: './setup/setup.module#SetupPageModule'
+          },
+          {
+            path: 'signup',
+            loadChildren: './signup/signup.module#SignupPageModule'
+          },
+          {
+            path: 'subscribe',
+            loadChildren: './subscribe/subscribe.module#SubscribePageModule'
+          }
+        ]
+      },
+      {
+        path: '',
+        redirectTo: '/tabs/account/status'
+      }
+    ]
   }
 ];
 
