@@ -1,9 +1,206 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Signup</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/tabs/clips/listing/select"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Signup New Participant</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <p>Signup Page</p>
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Your email</ion-label>
+            <ion-input
+              placeholder="Make sure it's valid. Will not be disclosed!"
+              type="email"
+              formControlName="email"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['email'].hasError('required') &&
+          form.get('email').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Your email address is required.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['email'].hasError('email') && form.get('email').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Enter a valid email address!</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input
+              placeholder="Should be complex and secure enough."
+              type="password"
+              formControlName="password"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['password'].hasError('required') &&
+          form.get('password').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Password is required.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['password'].hasError('minlength') &&
+          form.get('password').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Must be at least 8 characters!</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['password'].hasError('hasNumber') &&
+          form.get('password').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Must contain at least 1 number!</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['password'].hasError('hasCapitalCase') &&
+          form.get('password').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Must contain at least 1 Capital Case Letter!</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['password'].hasError('hasLowerCase') &&
+          form.get('password').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Must contain at least 1 Lower Case Letter!</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['password'].hasError('hasSpecialCharacters') &&
+          form.get('password').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Must contain at least 1 Special Character</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Confirm Password</ion-label>
+            <ion-input
+              placeholder="Repeat as above."
+              type="password"
+              formControlName="confirmPassword"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['confirmPassword'].hasError('required') &&
+          form.get('confirmPassword').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Your password confirmation is required.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['confirmPassword'].hasError('NoPasswordMatch') &&
+          form.get('confirmPassword').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Passwords do not match.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-item>
+            <ion-label position="floating">Display Name</ion-label>
+            <ion-input
+              placeholder="This will be visible to the public."
+              type="text"
+              formControlName="screenName"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['screenName'].hasError('required') &&
+          form.get('screenName').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Your display name is required.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+        *ngIf="
+          form.controls['screenName'].hasError('maxlength') &&
+          form.get('screenName').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Display name should not exceed 15 characters.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row
+      *ngIf="
+        form.controls['screenName'].hasError('hasNoSpecialCharacters') &&
+        form.get('screenName').touched
+      "
+    >
+      <ion-col size-sm="6" offset-sm="3">
+        <p>Only letters, numbers and underscore allowed.</p>
+      </ion-col>
+    </ion-row>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button
+            type="submit"
+            color="primary"
+            expand="block"
+            [disabled]="!form.valid"
+          >
+            Subscribe >
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
