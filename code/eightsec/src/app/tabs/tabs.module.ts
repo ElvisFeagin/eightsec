@@ -7,26 +7,12 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
-    component: TabsPage,
-    children: [
-      { path: 'clips', loadChildren: '../clips/clips.module#ClipsPageModule' },
-      { path: 'help', loadChildren: '../help/help.module#HelpPageModule' },
-      {
-        path: 'account',
-        loadChildren: '../account/account.module#AccountPageModule'
-      }
-    ]
-  },
-  {
     path: '',
-    redirectTo: '/tabs/clips',
-    pathMatch: 'full'
+    component: TabsPage
   }
 ];
 
 @NgModule({
-  imports: [CommonModule, IonicModule, RouterModule.forChild(routes)],
-  declarations: [TabsPage]
+  imports: [CommonModule, IonicModule, RouterModule.forChild(routes)]
 })
 export class TabsPageModule {}

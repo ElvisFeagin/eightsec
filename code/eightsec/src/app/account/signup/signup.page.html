@@ -1,16 +1,17 @@
+<!-- https://codinglatte.com/posts/angular/cool-password-validation-angular/ -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button
-        defaultHref="/tabs/clips/listing/select"
+        defaultHref="/tabs/clips"
       ></ion-back-button>
     </ion-buttons>
-    <ion-title>Signup New Participant</ion-title>
+    <ion-title>Signup</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="form">
+  <form [formGroup]="form" (ngSubmit)="onUserSignup(form)">
     <ion-grid>
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
@@ -180,15 +181,15 @@
         </ion-col>
       </ion-row>
       <ion-row
-      *ngIf="
-        form.controls['screenName'].hasError('hasNoSpecialCharacters') &&
-        form.get('screenName').touched
-      "
-    >
-      <ion-col size-sm="6" offset-sm="3">
-        <p>Only letters, numbers and underscore allowed.</p>
-      </ion-col>
-    </ion-row>
+        *ngIf="
+          form.controls['screenName'].hasError('hasNoSpecialCharacters') &&
+          form.get('screenName').touched
+        "
+      >
+        <ion-col size-sm="6" offset-sm="3">
+          <p>Only letters, numbers and underscore allowed.</p>
+        </ion-col>
+      </ion-row>
       <ion-row>
         <ion-col size-sm="6" offset-sm="3">
           <ion-button
@@ -197,7 +198,7 @@
             expand="block"
             [disabled]="!form.valid"
           >
-            Subscribe >
+            Sign up
           </ion-button>
         </ion-col>
       </ion-row>

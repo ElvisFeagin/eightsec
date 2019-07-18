@@ -1,3 +1,4 @@
+// https://codinglatte.com/posts/angular/cool-password-validation-angular/
 // https://github.com/mainawycliffe/ng-bootstrap-password-validation-example/blob/master/src/app/custom-validators.ts
 
 import { ValidationErrors, ValidatorFn, AbstractControl } from '@angular/forms';
