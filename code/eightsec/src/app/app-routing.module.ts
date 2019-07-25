@@ -16,7 +16,7 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: './clips/clips.module#ClipsPageModule'
-          }
+          },
         ]
       },
       {

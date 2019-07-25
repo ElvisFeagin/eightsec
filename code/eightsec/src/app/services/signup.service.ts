@@ -1,8 +1,10 @@
+// https://blog.angularindepth.com/how-the-angular-fire-library-makes-firebase-feel-like-magic-1fda375966bb
 // https://github.com/andrewevans0102/grocery-list
 
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { from, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 export interface SignedUpUser {
   userId?: string;
@@ -18,16 +20,6 @@ export interface SignedUpUser {
 export class SignupService {
   constructor(private afAuth: AngularFireAuth) {}
 
-  // createUser(email: string, password: string) {
-  //   return from(
-  //     new Promise<any>((resolve, reject) => {
-  //       this.afAuth.auth
-  //         .createUserWithEmailAndPassword(email, password)
-  //         .then(res => resolve(res), err => reject(err));
-  //     })
-  //   );
-  // }
-
   signUpUser(
     email: string,
     password: string
@@ -36,4 +28,6 @@ export class SignupService {
       this.afAuth.auth.createUserWithEmailAndPassword(email, password)
     );
   }
+
+  updateUserProfile() {}
 }
