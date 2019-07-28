@@ -17,7 +17,7 @@ export interface TopClip {
   providedIn: 'root'
 })
 export class TopService {
-  private _clips: TopClip[] = [
+  private _topClips: TopClip[] = [
     {
       id: 'cl1',
       caption:
@@ -59,8 +59,8 @@ export class TopService {
     }
   ];
 
-  get clips() {
-    return [...this._clips];
+  get topClips() {
+    return [...this._topClips];
   }
 
   constructor() {}
