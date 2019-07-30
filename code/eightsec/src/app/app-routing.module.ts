@@ -19,14 +19,14 @@ const routes: Routes = [
             path: 'heat',
             loadChildren: './clips/heat/heat.module#HeatPageModule'
           },
-          {
-            path: 'past',
-            loadChildren: './clips/past/past.module#PastPageModule'
-          },
           { path: 'top', loadChildren: './clips/top/top.module#TopPageModule' },
           {
             path: 'upload',
             loadChildren: './clips/upload/upload.module#UploadPageModule'
+          },
+          {
+            path: 'past/:weekNum',
+            loadChildren: './clips/past/past.module#PastPageModule'
           },
           {
             path: 'heat-clip/:clipId',

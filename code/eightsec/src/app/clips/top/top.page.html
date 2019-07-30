@@ -6,7 +6,7 @@
 
 <ion-content padding>
   <ion-grid>
-    <ion-row>
+    <ion-row *ngIf="loadedTopClips[0].isHeat">
       <ion-col size="12" size-sm="8" offset-sm="2" text-center>
         <ion-card>
           <ion-card-header>
@@ -26,8 +26,7 @@
                 '/',
                 'tabs',
                 'clips',
-                'heat-clip',
-                loadedTopClips[0].id
+                'heat'
               ]"
               >More</ion-button
             >
@@ -40,7 +39,7 @@
         <ion-list>
           <ion-item
             *ngFor="let topClip of loadedTopClips.slice(1)"
-            [routerLink]="['/', 'tabs', 'clips', 'past-clip', topClip.id]"
+            [routerLink]="['/', 'tabs', 'clips', 'past', topClip.weekNumber]"
             detail
           >
             <ion-thumbnail slot="start">

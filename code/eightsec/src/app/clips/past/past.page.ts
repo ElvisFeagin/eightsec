@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NavController } from '@ionic/angular';
+
 @Component({
-  selector: 'app-past',
   templateUrl: './past.page.html',
-  styleUrls: ['./past.page.scss'],
+  styleUrls: ['./past.page.scss']
 })
 export class PastPage implements OnInit {
+  constructor(private navCtrl: NavController) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  onViewClip() {
+    this.navCtrl.navigateBack('/tabs/clips/top');
   }
-
 }

@@ -41,8 +41,8 @@ export class TopService {
       uploadDate: new Date('Jul 7, 2025'),
       votes: 3,
       weekDate: new Date('Jul 13, 2025'),
-      weekNumber: 2,
-      userId: 'u2'
+      weekNumber: 3,
+      userId: 'u3'
     },
     {
       id: 'cl3',
@@ -54,8 +54,8 @@ export class TopService {
       uploadDate: new Date('Jul 15, 2025'),
       votes: 10,
       weekDate: new Date('Jul 20, 2025'),
-      weekNumber: 3,
-      userId: 'u3'
+      weekNumber: 2,
+      userId: 'u2'
     }
   ];
 
