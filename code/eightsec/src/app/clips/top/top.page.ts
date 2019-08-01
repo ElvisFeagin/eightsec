@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { TopService, TopClip } from '../../services/top.service';
+import { TopService } from '../../services/top.service';
+import { Clip } from '../../models/clip.model';
 
 @Component({
   selector: 'app-top',
@@ -8,7 +9,7 @@ import { TopService, TopClip } from '../../services/top.service';
   styleUrls: ['./top.page.scss']
 })
 export class TopPage implements OnInit {
-  loadedTopClips: TopClip[];
+  loadedTopClips: Clip[];
 
   constructor(private topService: TopService) {}
 

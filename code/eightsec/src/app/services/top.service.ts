@@ -1,23 +1,12 @@
 import { Injectable } from '@angular/core';
 
-export interface TopClip {
-  id: string;
-  caption: string;
-  imageUrl: string;
-  isHeat: boolean;
-  nickname: string;
-  uploadDate: Date;
-  votes: number;
-  weekDate: Date;
-  weekNumber: number;
-  userId: string;
-}
+import { Clip } from '../models/clip.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TopService {
-  private _topClips: TopClip[] = [
+  private _topClips: Clip[] = [
     {
       id: 'cl1',
       caption:
@@ -33,9 +22,9 @@ export class TopService {
     },
     {
       id: 'cl2',
-      caption:
-        'I was having the most wonderful dream. Except you were there',
-      imageUrl: 'https://free-images.com/lg/ea39/boys_funny_faces_expressions.jpg',
+      caption: 'I was having the most wonderful dream. Except you were there',
+      imageUrl:
+        'https://free-images.com/lg/ea39/boys_funny_faces_expressions.jpg',
       isHeat: false,
       nickname: 'P. Ennis',
       uploadDate: new Date('Jul 7, 2025'),
